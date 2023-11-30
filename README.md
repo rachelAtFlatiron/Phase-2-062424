@@ -59,35 +59,6 @@ What URLs do we want our application to have to simulate the feeling of differen
 ##### - The link is to `/projects/:id`
 ##### 5b. Use a fetch request in `ProjectDetails` to access a single project.  Use `useParams` to access the id.
 
-```js
-    <div className="card project-detail">
-        <figure className="image">
-            <img src={project.image} alt={project.name} />
-            <button className="claps" onClick={handleClaps}>
-                👏{project.claps}
-            </button>
-        </figure>
-        <section className="details">
-            <h4>{project.name}</h4>
-            <p>{project.about}</p>
-            <p>
-                <a href={project.link}>Link</a>
-            </p>
-        </section>
-        <div className="extra">
-            <span className="badge blue">Phase {project.phase}</span>
-            <div className="manage">
-                <Link to={`/projects/${project.id}/edit`} state={{project}}>
-                    <button>
-                        <FaPencilAlt />
-                    </button>
-                </Link>
-            </div>
-            {/* note no delete for ease of demonstration */}
-        </div>
-    </div>
-```
-
 <br />
 
 
