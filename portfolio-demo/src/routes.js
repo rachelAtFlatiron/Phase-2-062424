@@ -13,6 +13,8 @@ const routes = [
     {
         path: '/', 
         element: <App />,
+        //🛑 children is for having the Header on every page, meant to be used with <Outlet /> in App.js
+        //🛑 demonstrate without children to show how Header won't be on every page
         children: [
             {
                 // ✅  1c. For the `<App />` route create an array of children that represent all the pages (Home, About, Projects, etc.)
