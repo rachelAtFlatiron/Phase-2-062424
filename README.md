@@ -16,8 +16,8 @@ What URLs do we want our application to have to simulate the feeling of differen
 | --------------- | ------------------ |
 | Home            | / (root route)     |
 | About           | /about             |
-| CreateProject     | /projects/new      |
-| EditProject | /projects/:id/edit |
+| CreateProject     | /new      |
+| EditProject | /edit/:id |
 | ProjectDetail   | /projects/:id      |
 | ProjectPage     | /projects          |
 
