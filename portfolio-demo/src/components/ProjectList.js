@@ -1,11 +1,6 @@
 import ProjectListItem from "./ProjectListItem";
 
-//✅ 4. Create a search by name filter in ProjectList
 function ProjectList({ projects, phaseState, updatePhase, filter, deleteProject }) {
-	//✅ 4a. Create state for the searchQuery in ProjectList
-	//✅ 4b. Create a controlled form for the search query
-	//✅ 4c. On search query change update the searchQuery
-
 	// const filteredProjectsByPhase = projects.filter(
 	// 	(project) => {
 	// 		return project.phase === phaseState || phaseState === 0
