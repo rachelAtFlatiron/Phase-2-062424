@@ -9,7 +9,9 @@ function App() {
 
   const [darkMode, setDarkMode] = useState(true)
   const [phaseState, setPhase] = useState(0)
-
+  const [filter, setFilter] = useState('')
+  //create state for projects so that we can update projects list with new projects 
+  const [projects, setProjects] = useState(projectsData)
   const updatePhase = (phaseNumber) => {
 		setPhase(phaseNumber)
 	}
@@ -18,11 +20,27 @@ function App() {
     setDarkMode(prevDarkMode => !prevDarkMode)
   }
 
+  const addProject = (newProject) => {
+    setProjects([...projects, newProject])
+  }
+
+  const deleteProject = (projectId) => {
+    console.log(projectId)
+    const updateProjects = projects.filter((project) => {
+      return project.id !== projectId
+    })
+    setProjects(updateProjects)
+  }
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value)
+  }
+
   return (
     <div className={darkMode ? "App" : "App light"}>
       <Header handleClick={updateDarkMode} darkMode={darkMode} />
-      <ProjectForm />
-      <ProjectList phaseState={phaseState} updatePhase={updatePhase} projects={projectsData}/>
+      <ProjectForm addProject={addProject} handleFilterChange={handleFilterChange} filter={filter}/>
+      <ProjectList phaseState={phaseState} updatePhase={updatePhase} projects={projects} deleteProject={deleteProject} filter={filter}/>
     </div>
   );
 }

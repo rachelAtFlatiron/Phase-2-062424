@@ -1,35 +1,29 @@
 <mxfile host="65bd71144e">
     <diagram id="faeSXg8f0V2fyYmfKQ99" name="Page-1">
-        <mxGraphModel dx="548" dy="520" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="690" dy="450" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="6" value="" style="endArrow=classic;html=1;exitX=0.976;exitY=-0.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.453;entryY=1.018;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="3" target="2">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="360" y="230" as="sourcePoint"/>
-                        <mxPoint x="520" y="230" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="7" value="updatePhase triggers setPhase" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="6">
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.429;entryY=0.012;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="8" target="9">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="8" value="Source" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" connectable="0" vertex="1" parent="6">
-                    <mxGeometry x="-1" relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="2" value="App.js&lt;br&gt;&lt;br&gt;state: phase, projects&lt;br&gt;callback: updatePhase (sets phase state INSIDE App.js)" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="390" width="320" height="110" as="geometry"/>
-                </mxCell>
-                <mxCell id="3" value="ProjectList.js&lt;br&gt;props: phase, updatePhase, projects&lt;br&gt;&lt;br&gt;event: triggers updatePhase&lt;br&gt;&lt;br&gt;use phase to filter through projects" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
-                    <mxGeometry x="90" y="310" width="380" height="170" as="geometry"/>
-                </mxCell>
-                <mxCell id="4" value="" style="endArrow=classic;html=1;exitX=0.078;exitY=1.018;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.671;entryY=-0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="2" target="3">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="390" y="250" as="sourcePoint"/>
-                        <mxPoint x="490" y="250" as="targetPoint"/>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="5" value="props: phase, projects, updatePhase" style="edgeLabel;resizable=0;html=1;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="4">
+                <mxCell id="14" style="edgeStyle=none;html=1;" edge="1" parent="1" source="8" target="13">
                     <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="App&lt;br&gt;state: projects&lt;br&gt;state: filter&lt;br&gt;&lt;br&gt;handleFilterChange (wrapper for setFilter)&lt;br&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="370" y="90" width="290" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="ProjectForm&lt;br&gt;&amp;lt;filter input /&amp;gt;&lt;br&gt;&lt;br&gt;- create a controlled component" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="290" width="310" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="ProjectsList&lt;br&gt;&lt;br&gt;- responsible for filtering" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="610" y="290" width="230" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="props: projects&lt;br&gt;props: filter" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="630" y="240" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="props: handleFilterChange&lt;br&gt;props: filter (pass down so input value can reflect what is in state)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="180" y="240" width="370" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
