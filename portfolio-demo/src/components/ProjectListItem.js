@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProjectListItem({ project, deleteProject }) {
+function ProjectListItem({ project }) {
 	let { name, about, image, claps, link, phase } = project;
 
 	const [projectClaps, setProjectClaps] = useState(claps)
@@ -24,9 +24,7 @@ function ProjectListItem({ project, deleteProject }) {
 			</section>
 
 			<footer className="extra">
-				<button onClick={() => deleteProject(project.id)}>Delete</button>
 				<span className="badge blue">Phase {phase}</span>
-
 			</footer>
 		</li>
 	);

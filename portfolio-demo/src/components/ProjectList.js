@@ -1,23 +1,16 @@
 import ProjectListItem from "./ProjectListItem";
 
-function ProjectList({ projects, phaseState, updatePhase, filter, deleteProject }) {
-	// const filteredProjectsByPhase = projects.filter(
-	// 	(project) => {
-	// 		return project.phase === phaseState || phaseState === 0
-	// 	}
-	// );
-
-	// const filteredProjectsByName = filteredProjectsByPhase.filter(
-	// 	(project) => {
-	// 		return project.name.toLowerCase().includes(filter.toLowerCase())
-	// 	}
-	// )
+//✅ 4. Create a search by name filter in ProjectList
+function ProjectList({ projects, phaseState, updatePhase }) {
+	//✅ 4a. Create state for the searchQuery in ProjectList
+	//✅ 4b. Create a controlled form for the search query
+	//✅ 4c. On search query change update the searchQuery
 
 	const filteredProjects = projects.filter(
 		(project) => {
-			return (project.phase === phaseState || phaseState === 0) && (project.name.toLowerCase().includes(filter.toLowerCase()))
+			return project.phase === phaseState || phaseState === 0
 		}
-	)
+	);
 
 	return (
 		<section>
@@ -30,10 +23,14 @@ function ProjectList({ projects, phaseState, updatePhase, filter, deleteProject 
 				<button onClick={() => updatePhase(2)}>Phase 2</button>
 				<button onClick={() => updatePhase(1)}>Phase 1</button>
 			</div>
-			
+			<input
+				type="text"
+				placeholder="Search..."
+				name="search"
+			/>
 			<ul className="cards">
 				{filteredProjects.map((project) => (
-					<ProjectListItem key={project.id} deleteProject={deleteProject} project={project} />
+					<ProjectListItem key={project.id} project={project} />
 				))}
 			</ul>
 		</section>
