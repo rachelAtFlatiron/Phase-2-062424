@@ -7,15 +7,15 @@
 - [ ] Incorporate client-side routing into a single-page application in React
 
 
-| Lecture | Videos | Starter | Solution |
+| Lecture | Videos | Starter | Demo |
 | ------- | ------ | -------- | -------- |
-| 1. Components & Props | [Video]() | [Starter]() | [Solution]() |
-| 2. State & Events | [Video]() | [Starter]() | [Solution]() |
-| 3. Information Flow  | [Video]() | [Starter]() | [Solution]() | 
-| 4. Forms  | [Video]() | [Starter]() | [Solution]() |
-| 5. Side Effects & Data Fetching  | [Video]() | [Starter]() | [Solution]() |
-| 6. PATCH & DELETE  | [Video]() | [Starter]() | [Solution]() |
-| 7. Client-Side Routing  | [Video]() | [Starter]() | [Solution]() |
+| 1. Components & Props | [Video]() | [Starter]() | [Demo]() |
+| 2. State & Events | [Video]() | [Starter]() | [Demo]() |
+| 3. Information Flow  | [Video]() | [Starter]() | [Demo]() | 
+| 4. Forms  | [Video]() | [Starter]() | [Demo]() |
+| 5. Side Effects & Data Fetching  | [Video]() | [Starter]() | [Demo]() |
+| 6. PATCH & DELETE  | [Video]() | [Starter]() | [Demo]() |
+| 7. Client-Side Routing  | [Video]() | [Starter]() | [Demo]() |
 
 
 # Demo Documentation
