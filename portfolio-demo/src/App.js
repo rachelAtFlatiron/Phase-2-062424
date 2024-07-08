@@ -10,27 +10,22 @@ import projects from "./projects";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(true);
-	const [phaseState, setPhase] = useState(0);
 
 	// ✅ 2b. Write a callback function inside the App component:
 	// ✅ - pass the callback function down as a prop to `ProjectList`
-	function updatePhase(phaseNumber) {
-		setPhase(phaseNumber);
-	}
 
-	const updateDarkMode = () => {
+	const handleClick = () => {
 		setDarkMode((prevDarkMode) => !prevDarkMode);
 	};
 
 	return (
 		<div className={darkMode ? "App" : "App light"}>
-			<Header handleClick={updateDarkMode} darkMode={darkMode} />
+			<Header />
+			<button onClick={handleClick}>
+				{darkMode ? "Light Mode" : "Dark Mode"}
+			</button>
 			<ProjectForm />
-			<ProjectList
-				phaseState={phaseState}
-				updatePhase={updatePhase}
-				projects={projects}
-			/>
+			<ProjectList projects={projects} />
 		</div>
 	);
 }
