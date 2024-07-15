@@ -20,14 +20,6 @@ output:
 
 ---
 
-## ❓ Why React 
-
-Writing vanilla JavaScript is hard especially when it comes to
-- Creating/Updating DOM elements
-- Code organization (separation of concerns)
-
----
-
 ## 🚗 React Roadmap
 
 The goals for Phase 2: 
@@ -38,42 +30,30 @@ The goals for Phase 2:
 
 ---
 
-## What We Will Be Building 
-## and a `create-react-app` Demo
+## ❓ Why React 
+
+Writing vanilla JavaScript is hard especially when it comes to
+- Creating/Updating DOM elements
+- Code organization (separation of concerns)
 
 ---
 
 ## Static vs Dynamic 
 
-- Static websites: websites that deliver the same content for all users
-- Dynamic websites: websites that change files on the web server (which is different from the database server) based on some factor
-
-<br />
-
-- React is considered static because we always send the client the same JS, however the data itself can be considered dynamic as it changes based on user interaction
-
-
+- Static websites: websites that deliver the same js/html for all users
+- Dynamic websites: websites that receive different html or files from the server to update the site
 
 ---
 
-## ReactDOM.render 
+## Virtual DOM
 
-```js
-ReactDOM.render(<App />, document.getElementById('root'))
-```
+- React creates a virtual representation of the UI that is saved in browser memory
+- ReactDOM is responsible for making sure the real DOM matches the virtual DOM
+- This process abstracts out the manual updating, element creation, etc. from phase 1
 
-- inserts a react element into the DOM
-- first arg is the react element we'd like to render to the DOM(JSX)
-- the second argument is the DOM node where we want to insert that react element
+---
 
-<br />
-
-- Note: This is usually contained in `index.js`
-- All children of `<App />` will also be rendered
-
---- 
-
-NOTE: ReactDOM.render only works with React up to version 17.  React 18 now uses ReactDOM.createRoot() but it does the same thing as ReactDOM.render().
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
 
 ---
 
@@ -96,63 +76,6 @@ NOTE: ReactDOM.render only works with React up to version 17.  React 18 now uses
 - give warnings about deprecated code 
 - <strong>identify bad syntax</strong>
 
----
-
-
-## Components 
-
----
-
-## Deliverable #1 and draw.io component tree
-
-Components are the building blocks of React. A component is a <strong>function</strong> that:
-
-- Takes in some raw data (props)
-- Returns user interface (JSX)
-- Is an independent and reusable bit of code
-- Often represent individual and reusable section of the UI
-
-</p>
-
-```js
-const Header = () => {
-  return (
-    <div>
-      <h3>Hello World</h3>
-    </div>
-  );
-};
-
-ReactDOM.render(<Header />, document.getElementById("root"));
-```
-
----
-
-<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*CqdIWZy0NMPQhYx2rKzo9g.png" width="900px"/>
-
----
-
-
-## Declarative vs Imperative 
-
-- Imperative: Describing how to do something (an explicit sequence of events):
-
-```js
-const h1 = document.createElement("h1");
-h1.id = "main";
-h1.className = "blue";
-h1.textContent = "Hello!";
-```
-
-- Declarative: Describe what we want (specifies the result):
-
-```js
-const h1 = (
-  <h1 id="main" className="blue">
-    Hello from JSX!
-  </h1>
-);
-```
 
 ---
 
@@ -187,7 +110,34 @@ var h1 =
   );
 ```
 
+---
 
+## Components 
+
+---
+
+## Components
+
+Components are the building blocks of React. A component is a <strong>function</strong> that:
+
+- Takes in some raw data (props)
+- Returns user interface (JSX)
+- Is an independent and reusable bit of code
+- Often represent individual and reusable section of the UI
+
+</p>
+
+```js
+const Header = () => {
+  return (
+    <div>
+      <h3>Hello World</h3>
+    </div>
+  );
+};
+
+ReactDOM.render(<Header />, document.getElementById("root"));
+```
 
 ---
 
@@ -220,15 +170,29 @@ function card() {
 - Component name needs to be capitalized
 - Components can only return one element
 
-
 ---
 
-## Virtual DOM
 
-- React creates a virtual representation of the UI that is saved in browser memory
-- ReactDOM is responsible for making sure the real DOM matches the virtual DOM
-- This process abstracts out the manual updating, element creation, etc. from phase 1
+## Declarative vs Imperative 
 
+- Imperative: Describing how to do something (an explicit sequence of events):
+
+```js
+const h1 = document.createElement("h1");
+h1.id = "main";
+h1.className = "blue";
+h1.textContent = "Hello!";
+```
+
+- Declarative: Describe what we want (specifies the result):
+
+```js
+const h1 = (
+  <h1 id="main" className="blue">
+    Hello from JSX!
+  </h1>
+);
+```
 ---
 
 ## Break

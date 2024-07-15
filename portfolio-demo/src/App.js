@@ -7,6 +7,18 @@ import projects from './projects'
 //✅ 1a. create a header component
 //✅ 1b. create a project form component
 //✅ 1c. create a project list component
+
+// `Hi my name is ${myName}`
+function App(){
+    return(
+        <div>
+            <Header />
+            <ProjectForm />
+            <ProjectList projects={projects} />
+        </div>
+    )
+}
+
 //✅ 1d. provide an array of projects to the project list
 
 //✅ 2. create a project list component
@@ -18,5 +30,6 @@ import projects from './projects'
 //✅ 3a. accept the props argument
 //✅ 3b. destructure the props object
 //✅ 3c. display info of project object
+
 
 export default App;
