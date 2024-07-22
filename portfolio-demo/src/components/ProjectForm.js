@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProjectForm({ addProject }) {
+function ProjectForm({ addProject, url }) {
 	const formOutline = {
 		name: "",
 		about: "",
@@ -22,9 +22,26 @@ function ProjectForm({ addProject }) {
 	//✅ 2. Persist the new project upon the ProjectForm submission
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		//✅ 2a. Send the new project data to the server using a POST fetch request
-		addProject({...form, phase: parseInt(form.phase)}); 
-		setForm(formOutline)
+
+		fetch(url, {
+			method: 'POST',
+			headers: {'content-type': 'application/json'},
+			body: JSON.stringify(form)
+		})
+		.then(res => {
+			if(res.ok){
+				return res.json()
+			} else {
+				throw Error('post went wrong')
+			}
+		})
+		//pessimistic rendering, we don't do anything unless POST was successful to ensure rendering of accurate backend data
+		.then(data => {
+			//on successful POST update parent state (specifically projects state) to include the new project
+			addProject({...data, phase: parseInt(form.phase)}); 
+			setForm(formOutline)
+		})
+		.catch(err => console.log('could not reach server'))
 	};
 
 	
