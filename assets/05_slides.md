@@ -17,22 +17,6 @@ title: '05_sidefx_fetching'
 
 ---
 
-## What to know before discussing side effects? 
-
-React components are 'pure functions'. This means that given an input (such as a prop), the return is 100% predictable
-
-```js
-const Greeting = ({ name }) => {
-  return <h1> Hello, {name} </h1>;
-};
-
-export default Greeting;
-```
-
-Any time Greeting is called, and provided a new prop, we will always be able to predict the output, regardless of the prop value
-
----
-
 ## What is a side effect? 
 
 "We perform a side effect when we need to reach outside of our React components to do something. Performing a side effect, however, will not give us a predictable result."
