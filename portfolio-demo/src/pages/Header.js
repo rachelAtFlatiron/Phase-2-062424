@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 
 // ✅ 4. Add `NavLink`'s throughout the site.
 // ✅ 4a. Add `NavLink`s in `Header`.
@@ -11,18 +12,18 @@ function Header({ updateDarkMode, darkMode }) {
 				Project Showcase
 			</h1>
 			<button onClick={updateDarkMode}>{darkMode ? "Light Mode" : "Dark Mode"}</button>
-			<a className="button">
+			<NavLink to={'/'} className="button">
 				Home
-			</a>
-			<a className="button" >
+			</NavLink>
+			<NavLink to={'/about'} className="button">
 				About
-			</a>
-			<a className="button" >
+			</NavLink>
+			<NavLink to={'/projects/new'} className="button">
 				New Project
-			</a>
-			<a className="button" >
+			</NavLink>
+			<NavLink to={'/projects'} className="button">
 				All Projects
-			</a>
+			</NavLink>
 		</header>
 	);
 }

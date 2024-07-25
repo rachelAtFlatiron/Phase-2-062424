@@ -12,3 +12,39 @@ import EditProject from "./pages/EditProject";
 // ✅  1c. For the `<App />` route create an array of children that represent all the pages (Home, About, Projects, etc.)
 
 
+const routes = [
+    {
+        path: '/',
+        element: <App />,
+        //most specific to least specific routes
+        children: [
+            {
+                path: '/',
+                element: <Home />
+            },
+        
+            {
+                path: '/about',
+                element: <About />
+            },
+            {
+                path: '/projects/new',
+                element: <CreateProject />
+            },
+            {
+                path: '/projects/:id/edit',
+                element: <EditProject />
+            },
+            {
+                path: '/projects/:id',
+                element: <ProjectDetails />
+            },
+            {
+                path: '/projects',
+                element: <ProjectsPage />
+            }
+        ]
+    }
+]
+
+export default routes 

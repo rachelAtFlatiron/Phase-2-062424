@@ -15,7 +15,7 @@ function CreateProject() {
 	};
 
 	const [form, setForm] = useState(formOutline);
-
+	const navigate = useNavigate()
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
@@ -31,7 +31,7 @@ function CreateProject() {
 		})
 		.then((res) => res.json())
 		.then((data) => {
-
+			navigate(`/projects`)
 		})
 		.catch(err => console.log(err))
 	};
